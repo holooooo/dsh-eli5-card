@@ -1,0 +1,61 @@
+{
+  "name": "@local/dsh-eli5-card",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Turn selected chat terms into illustrated explanations and a personal knowledge graph.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.bundle.js",
+    "./typert": "./typert.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "client.bundle.js",
+    "typert.js",
+    "src/*.js",
+    "locale/*.json",
+    "cordis.patch.yml",
+    "icon.svg",
+    "docs",
+    "README.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.5 <0.2.3-0",
+    "node": ">=24"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-settings-plugins",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-api-workspace-controller"
+      ]
+    }
+  },
+  "dependencies": {
+    "3d-force-graph": "1.80.2",
+    "three": "0.187.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  },
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node --test",
+    "check": "npm run build && node --check index.js && node --check typert.js && node --check client.js && npm test"
+  }
+}

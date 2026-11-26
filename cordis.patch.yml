@@ -1,0 +1,4 @@
+- insert:
+    - id: eli5-card
+      name: '@local/dsh-eli5-card'
+      config: {}

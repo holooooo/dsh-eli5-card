@@ -1,0 +1,10 @@
+node_modules/
+/client.bundle.js
+output/
+.DS_Store
+.env
+.env.*
+*.orig
+*.rej
+*.log
+*.tgz
