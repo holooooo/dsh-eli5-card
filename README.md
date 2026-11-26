@@ -2,9 +2,15 @@
 
 DeepSeek Harness 插件：在对话里选中一个不熟悉的词，点「解释」，就能生成带配图和类比的卡片。保存过的词和别名会在其他会话里高亮，点击可重新打开卡片。
 
-![WebGL 解释卡片：图示展示网页如何经由 WebGL 调用显卡绘图](docs/screenshots/webgl-card.webp)
+## 截图
 
-*实际生成的 WebGL 卡片，截图只展示解释内容。*
+已保存的 **WebGL** 在会话中以蓝色下划线显示：
+
+![会话中的 WebGL 术语高亮](docs/screenshots/chat-highlight.webp)
+
+点击蓝字会打开浮动卡片，里面有配图、类比、相关概念和追问输入框：
+
+![点击会话中的 WebGL 后打开的解释卡片](docs/screenshots/chat-open-card.webp)
 
 ## 安装
 
@@ -37,3 +43,7 @@ npm run check
 `npm run check` 构建客户端并运行单元测试。宿主集成测试使用 Harness 的 Cordis、Typert Gateway 和 JSON 存储，以及测试模型。当前版本的设置面板、图谱与追问尚未在重新加载后的桌面界面中验收。
 
 实现与验证细节见 [插件文档](docs/DETAIL.md)。3D 图谱基于 [3d-force-graph](https://github.com/vasturiano/3d-force-graph)。
+
+## 许可证
+
+[MIT](LICENSE)。
